@@ -1,0 +1,132 @@
+{
+  "version": 1,
+  "projectType": "ScriptRunnerWindow",
+  "meta": {
+    "name": "Multi-Tab Form",
+    "createdAt": "2026-05-01T00:00:00.000Z",
+    "updatedAt": "2026-05-01T00:00:00.000Z"
+  },
+  "window": {
+    "id": "window_1",
+    "title": "Multi-Tab Form",
+    "width": 980,
+    "height": 640,
+    "padding": 24,
+    "widgetGap": 12,
+    "script": {
+      "command": "",
+      "argumentStyle": "keyValue",
+      "keyValueSeparator": "="
+    },
+    "actionBar": {
+      "alignment": "right",
+      "buttons": [
+        { "id": "action_cancel01", "text": "Cancel", "role": "cancel", "style": "secondary" },
+        { "id": "action_run012345", "text": "Run", "role": "run", "style": "primary" }
+      ]
+    },
+    "tabs": [
+      {
+        "id": "tab_source01",
+        "name": "Source",
+        "order": 0,
+        "widgets": [
+          {
+            "id": "textinput_url001",
+            "kind": "text-input",
+            "name": "source_url",
+            "parentId": null,
+            "x": 24, "y": 24, "width": 320, "height": 36, "padding": 8,
+            "props": {
+              "key": "source_url",
+              "required": true,
+              "helpText": "URL to fetch data from",
+              "label": "Source URL",
+              "placeholder": "https://example.com/feed.json",
+              "defaultValue": ""
+            }
+          },
+          {
+            "id": "combobox_format1",
+            "kind": "combobox",
+            "name": "input_format",
+            "parentId": null,
+            "x": 24, "y": 72, "width": 240, "height": 36, "padding": 8,
+            "props": {
+              "key": "input_format",
+              "required": true,
+              "label": "Input format",
+              "placeholder": "Choose...",
+              "editable": false,
+              "options": [
+                { "label": "JSON", "value": "json" },
+                { "label": "CSV", "value": "csv" },
+                { "label": "YAML", "value": "yaml" }
+              ],
+              "defaultValue": "json"
+            }
+          }
+        ]
+      },
+      {
+        "id": "tab_settings1",
+        "name": "Settings",
+        "order": 1,
+        "widgets": [
+          {
+            "id": "numberinput_thr",
+            "kind": "number-input",
+            "name": "threads",
+            "parentId": null,
+            "x": 24, "y": 24, "width": 160, "height": 36, "padding": 8,
+            "props": {
+              "key": "threads",
+              "required": false,
+              "helpText": "Number of worker threads",
+              "label": "Threads",
+              "min": 1,
+              "max": 64,
+              "step": 1,
+              "precision": 0,
+              "defaultValue": 4,
+              "suffix": ""
+            }
+          },
+          {
+            "id": "radio_loglevel0",
+            "kind": "radio-group",
+            "name": "log_level",
+            "parentId": null,
+            "x": 24, "y": 72, "width": 240, "height": 80, "padding": 8,
+            "props": {
+              "key": "log_level",
+              "required": false,
+              "label": "Log level",
+              "direction": "vertical",
+              "options": [
+                { "label": "Debug", "value": "debug" },
+                { "label": "Info", "value": "info" },
+                { "label": "Warning", "value": "warning" }
+              ],
+              "defaultValue": "info"
+            }
+          },
+          {
+            "id": "checkbox_skip01",
+            "kind": "checkbox",
+            "name": "skip_existing",
+            "parentId": null,
+            "x": 24, "y": 164, "width": 240, "height": 28, "padding": 4,
+            "props": {
+              "key": "skip_existing",
+              "required": false,
+              "helpText": "Skip records that already exist locally",
+              "text": "Skip existing records",
+              "checked": true
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

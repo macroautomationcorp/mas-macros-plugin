@@ -1,0 +1,126 @@
+{
+  "version": 1,
+  "projectType": "ScriptRunnerWindow",
+  "meta": {
+    "name": "Slider and Checkbox",
+    "createdAt": "2026-05-01T00:00:00.000Z",
+    "updatedAt": "2026-05-01T00:00:00.000Z"
+  },
+  "window": {
+    "id": "window_1",
+    "title": "Slider and Checkbox",
+    "width": 980,
+    "height": 640,
+    "padding": 24,
+    "widgetGap": 12,
+    "script": {
+      "command": "",
+      "argumentStyle": "keyValue",
+      "keyValueSeparator": "="
+    },
+    "actionBar": {
+      "alignment": "right",
+      "buttons": [
+        { "id": "action_cancel01", "text": "Cancel", "role": "cancel", "style": "secondary" },
+        { "id": "action_run012345", "text": "Run", "role": "run", "style": "primary" }
+      ]
+    },
+    "tabs": [
+      {
+        "id": "tab_general0",
+        "name": "General",
+        "order": 0,
+        "widgets": [
+          {
+            "id": "label_intro001",
+            "kind": "label",
+            "name": "label_intro001",
+            "parentId": null,
+            "x": 24, "y": 24, "width": 320, "height": 24, "padding": 0,
+            "props": {
+              "text": "Tune the run before starting",
+              "fontSize": 14
+            }
+          },
+          {
+            "id": "slider_speed01",
+            "kind": "slider",
+            "name": "speed",
+            "parentId": null,
+            "x": 24, "y": 60, "width": 280, "height": 50, "padding": 8,
+            "props": {
+              "key": "speed",
+              "required": false,
+              "helpText": "Throttle speed as a percentage",
+              "label": "Speed",
+              "min": 0,
+              "max": 100,
+              "step": 5,
+              "defaultValue": 50,
+              "showValue": true,
+              "suffix": "%"
+            }
+          },
+          {
+            "id": "slider_retries1",
+            "kind": "slider",
+            "name": "max_retries",
+            "parentId": null,
+            "x": 24, "y": 122, "width": 280, "height": 50, "padding": 8,
+            "props": {
+              "key": "max_retries",
+              "required": false,
+              "helpText": "Maximum retry attempts on failure",
+              "label": "Max retries",
+              "min": 0,
+              "max": 10,
+              "step": 1,
+              "defaultValue": 3,
+              "showValue": true,
+              "suffix": ""
+            }
+          },
+          {
+            "id": "separator_div01",
+            "kind": "separator",
+            "name": "separator_div01",
+            "parentId": null,
+            "x": 24, "y": 188, "width": 280, "height": 1, "padding": 0,
+            "props": {
+              "direction": "horizontal",
+              "label": "Flags"
+            }
+          },
+          {
+            "id": "checkbox_resume",
+            "kind": "checkbox",
+            "name": "resume",
+            "parentId": null,
+            "x": 24, "y": 208, "width": 200, "height": 28, "padding": 4,
+            "props": {
+              "key": "resume",
+              "required": false,
+              "helpText": "Resume from the last checkpoint",
+              "text": "Resume from last checkpoint",
+              "checked": false
+            }
+          },
+          {
+            "id": "checkbox_quiet0",
+            "kind": "checkbox",
+            "name": "quiet",
+            "parentId": null,
+            "x": 24, "y": 244, "width": 200, "height": 28, "padding": 4,
+            "props": {
+              "key": "quiet",
+              "required": false,
+              "helpText": "Suppress non-error output",
+              "text": "Quiet mode",
+              "checked": false
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

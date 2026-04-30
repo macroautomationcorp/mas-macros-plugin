@@ -1,0 +1,115 @@
+{
+  "version": 1,
+  "projectType": "ScriptRunnerWindow",
+  "meta": {
+    "name": "File Picker Form",
+    "createdAt": "2026-05-01T00:00:00.000Z",
+    "updatedAt": "2026-05-01T00:00:00.000Z"
+  },
+  "window": {
+    "id": "window_1",
+    "title": "File Picker Form",
+    "width": 980,
+    "height": 640,
+    "padding": 24,
+    "widgetGap": 12,
+    "script": {
+      "command": "",
+      "argumentStyle": "keyValue",
+      "keyValueSeparator": "="
+    },
+    "actionBar": {
+      "alignment": "right",
+      "buttons": [
+        { "id": "action_cancel01", "text": "Cancel", "role": "cancel", "style": "secondary" },
+        { "id": "action_run012345", "text": "Run", "role": "run", "style": "primary" }
+      ]
+    },
+    "tabs": [
+      {
+        "id": "tab_paths001",
+        "name": "Paths",
+        "order": 0,
+        "widgets": [
+          {
+            "id": "filepicker_cfg",
+            "kind": "file-picker",
+            "name": "config_file",
+            "parentId": null,
+            "x": 24, "y": 24, "width": 320, "height": 36, "padding": 8,
+            "props": {
+              "key": "config_file",
+              "required": true,
+              "helpText": "Configuration file driving the run",
+              "label": "Config file",
+              "placeholder": "Select a config file...",
+              "defaultValue": "",
+              "filters": "*.json;*.yaml;*.yml;*.toml"
+            }
+          },
+          {
+            "id": "filepicker_data",
+            "kind": "file-picker",
+            "name": "input_data",
+            "parentId": null,
+            "x": 24, "y": 72, "width": 320, "height": 36, "padding": 8,
+            "props": {
+              "key": "input_data",
+              "required": false,
+              "helpText": "Optional input data file (CSV or JSONL)",
+              "label": "Input data",
+              "placeholder": "Select input data...",
+              "defaultValue": "",
+              "filters": "*.csv;*.jsonl"
+            }
+          },
+          {
+            "id": "dirpicker_out01",
+            "kind": "directory-picker",
+            "name": "output_dir",
+            "parentId": null,
+            "x": 24, "y": 120, "width": 320, "height": 36, "padding": 8,
+            "props": {
+              "key": "output_dir",
+              "required": true,
+              "helpText": "Where to write generated files",
+              "label": "Output directory",
+              "placeholder": "Select an output folder...",
+              "defaultValue": ""
+            }
+          },
+          {
+            "id": "datepicker_since",
+            "kind": "date-picker",
+            "name": "since",
+            "parentId": null,
+            "x": 24, "y": 168, "width": 200, "height": 36, "padding": 8,
+            "props": {
+              "key": "since",
+              "required": false,
+              "helpText": "Only include records on or after this date",
+              "label": "Since",
+              "format": "YYYY-MM-DD",
+              "defaultValue": ""
+            }
+          },
+          {
+            "id": "timepicker_dl01",
+            "kind": "time-picker",
+            "name": "deadline",
+            "parentId": null,
+            "x": 240, "y": 168, "width": 180, "height": 36, "padding": 8,
+            "props": {
+              "key": "deadline",
+              "required": false,
+              "helpText": "Wall-clock deadline for the run",
+              "label": "Deadline",
+              "format": "HH:mm",
+              "defaultValue": ""
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

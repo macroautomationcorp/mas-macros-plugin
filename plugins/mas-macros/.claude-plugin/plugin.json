@@ -1,0 +1,8 @@
+{
+  "name": "mas-macros",
+  "version": "0.2.0",
+  "description": "Generates everything needed to author a Macro Automation Studio macro: UIBuilder argument forms (.uibproj) and runtime dashboards (.uibrt), plus the Python script that consumes args via script_args.py and drives the dashboard using the mas SDK (mas.click / mas.find_object / mas.ui.set_progress / mas.storage.save / etc.).",
+  "author": {
+    "name": "Macro Automation Corp"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "projectType": "RuntimeUI",
+  "meta": {
+    "name": "Status Dashboard",
+    "createdAt": "2026-05-01T00:00:00.000Z",
+    "updatedAt": "2026-05-01T00:00:00.000Z"
+  },
+  "widgets": [
+    {
+      "id": "runtimelabel_status",
+      "kind": "runtime-label",
+      "name": "status",
+      "parentId": null,
+      "x": 24, "y": 24, "width": 400, "height": 32, "padding": 0,
+      "props": {
+        "text": "Idle",
+        "fontSize": 16,
+        "color": "",
+        "alignment": "left"
+      }
+    },
+    {
+      "id": "runtimeprogress_main",
+      "kind": "runtime-progress",
+      "name": "main_bar",
+      "parentId": null,
+      "x": 24, "y": 68, "width": 400, "height": 40, "padding": 0,
+      "props": {
+        "label": "Overall progress",
+        "min": 0,
+        "max": 100,
+        "value": 0,
+        "showPercentage": true
+      }
+    },
+    {
+      "id": "runtimelabel_step",
+      "kind": "runtime-label",
+      "name": "step",
+      "parentId": null,
+      "x": 24, "y": 132, "width": 400, "height": 24, "padding": 0,
+      "props": {
+        "text": "",
+        "fontSize": 12,
+        "color": "#6b7280",
+        "alignment": "left"
+      }
+    }
+  ]
+}

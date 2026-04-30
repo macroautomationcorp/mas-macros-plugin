@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "projectType": "ScriptRunnerWindow",
+  "meta": {
+    "name": "Simple Form",
+    "createdAt": "2026-05-01T00:00:00.000Z",
+    "updatedAt": "2026-05-01T00:00:00.000Z"
+  },
+  "window": {
+    "id": "window_1",
+    "title": "Simple Form",
+    "width": 980,
+    "height": 640,
+    "padding": 24,
+    "widgetGap": 12,
+    "script": {
+      "command": "",
+      "argumentStyle": "keyValue",
+      "keyValueSeparator": "="
+    },
+    "actionBar": {
+      "alignment": "right",
+      "buttons": [
+        { "id": "action_cancel01", "text": "Cancel", "role": "cancel", "style": "secondary" },
+        { "id": "action_run012345", "text": "Run", "role": "run", "style": "primary" }
+      ]
+    },
+    "tabs": [
+      {
+        "id": "tab_general0",
+        "name": "General",
+        "order": 0,
+        "widgets": [
+          {
+            "id": "textinput_user01",
+            "kind": "text-input",
+            "name": "username",
+            "parentId": null,
+            "x": 24, "y": 24, "width": 240, "height": 36, "padding": 8,
+            "props": {
+              "key": "username",
+              "required": true,
+              "helpText": "Account name to log in with",
+              "label": "Username",
+              "placeholder": "alice",
+              "defaultValue": ""
+            }
+          },
+          {
+            "id": "textinput_token1",
+            "kind": "text-input",
+            "name": "api_token",
+            "parentId": null,
+            "x": 24, "y": 72, "width": 240, "height": 36, "padding": 8,
+            "props": {
+              "key": "api_token",
+              "required": true,
+              "helpText": "API token from your account settings",
+              "label": "API token",
+              "placeholder": "tok_...",
+              "defaultValue": ""
+            }
+          },
+          {
+            "id": "checkbox_dryrun",
+            "kind": "checkbox",
+            "name": "dry_run",
+            "parentId": null,
+            "x": 24, "y": 120, "width": 200, "height": 28, "padding": 4,
+            "props": {
+              "key": "dry_run",
+              "required": false,
+              "helpText": "Preview the run without making changes",
+              "text": "Dry run",
+              "checked": false
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "mas-tools",
+  "owner": {
+    "name": "Macro Automation Corp"
+  },
+  "description": "Internal Claude Code marketplace for Macro Automation Studio tooling.",
+  "metadata": {
+    "pluginRoot": "./plugins"
+  },
+  "plugins": [
+    {
+      "name": "mas-macros",
+      "source": "./plugins/mas-macros",
+      "description": "End-to-end macro authoring for Macro Automation Studio: generates UIBuilder argument forms (.uibproj), runtime dashboards (.uibrt), and the Python scripts that consume args and drive the dashboards via the mas SDK (interaction, vision, storage, app, ui).",
+      "tags": ["macro-automation-studio", "uibuilder", "python-sdk", "code-generation"]
+    }
+  ]
+}

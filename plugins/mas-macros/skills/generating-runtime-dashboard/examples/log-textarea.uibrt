@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "projectType": "RuntimeUI",
+  "meta": {
+    "name": "Log Dashboard",
+    "createdAt": "2026-05-01T00:00:00.000Z",
+    "updatedAt": "2026-05-01T00:00:00.000Z"
+  },
+  "widgets": [
+    {
+      "id": "runtimelabel_status",
+      "kind": "runtime-label",
+      "name": "status",
+      "parentId": null,
+      "x": 24, "y": 24, "width": 400, "height": 32, "padding": 0,
+      "props": {
+        "text": "Starting...",
+        "fontSize": 14,
+        "color": "",
+        "alignment": "left"
+      }
+    },
+    {
+      "id": "runtimeprogress_main",
+      "kind": "runtime-progress",
+      "name": "main_bar",
+      "parentId": null,
+      "x": 24, "y": 68, "width": 400, "height": 40, "padding": 0,
+      "props": {
+        "label": "",
+        "min": 0,
+        "max": 100,
+        "value": 0,
+        "showPercentage": true
+      }
+    },
+    {
+      "id": "runtimetextarea_log",
+      "kind": "runtime-textarea",
+      "name": "log",
+      "parentId": null,
+      "x": 24, "y": 120, "width": 440, "height": 320, "padding": 0,
+      "props": {
+        "text": "",
+        "fontSize": 12,
+        "fontFamily": "mono",
+        "scrollable": true,
+        "maxLines": 500,
+        "showLineNumbers": false
+      }
+    }
+  ]
+}

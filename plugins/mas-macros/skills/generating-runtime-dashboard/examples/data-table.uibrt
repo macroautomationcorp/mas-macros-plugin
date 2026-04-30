@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "projectType": "RuntimeUI",
+  "meta": {
+    "name": "Data Table Dashboard",
+    "createdAt": "2026-05-01T00:00:00.000Z",
+    "updatedAt": "2026-05-01T00:00:00.000Z"
+  },
+  "widgets": [
+    {
+      "id": "runtimelabel_status",
+      "kind": "runtime-label",
+      "name": "status",
+      "parentId": null,
+      "x": 24, "y": 24, "width": 400, "height": 32, "padding": 0,
+      "props": {
+        "text": "Collecting results...",
+        "fontSize": 14,
+        "color": "",
+        "alignment": "left"
+      }
+    },
+    {
+      "id": "runtimeinput_filter",
+      "kind": "runtime-input",
+      "name": "filter_input",
+      "parentId": null,
+      "x": 24, "y": 68, "width": 280, "height": 60, "padding": 0,
+      "props": {
+        "label": "Filter",
+        "placeholder": "Type to narrow results...",
+        "defaultValue": ""
+      }
+    },
+    {
+      "id": "runtimetable_results",
+      "kind": "runtime-table",
+      "name": "results",
+      "parentId": null,
+      "x": 24, "y": 140, "width": 440, "height": 300, "padding": 0,
+      "props": {
+        "columns": ["Name", "Value", "Status"],
+        "scrollable": true,
+        "striped": true,
+        "compact": false,
+        "maxRows": 200
+      }
+    },
+    {
+      "id": "runtimebutton_export",
+      "kind": "runtime-button",
+      "name": "export_btn",
+      "parentId": null,
+      "x": 24, "y": 452, "width": 160, "height": 36, "padding": 0,
+      "props": {
+        "text": "Export CSV",
+        "variant": "default",
+        "disabled": false
+      }
+    },
+    {
+      "id": "runtimebutton_stop",
+      "kind": "runtime-button",
+      "name": "stop_btn",
+      "parentId": null,
+      "x": 200, "y": 452, "width": 160, "height": 36, "padding": 0,
+      "props": {
+        "text": "Stop",
+        "variant": "destructive",
+        "disabled": false
+      }
+    }
+  ]
+}

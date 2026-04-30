@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "projectType": "RuntimeUI",
+  "meta": {
+    "name": "Streaming Chart",
+    "createdAt": "2026-05-01T00:00:00.000Z",
+    "updatedAt": "2026-05-01T00:00:00.000Z"
+  },
+  "widgets": [
+    {
+      "id": "runtimelabel_status",
+      "kind": "runtime-label",
+      "name": "status",
+      "parentId": null,
+      "x": 24, "y": 24, "width": 400, "height": 32, "padding": 0,
+      "props": {
+        "text": "Streaming...",
+        "fontSize": 14,
+        "color": "",
+        "alignment": "left"
+      }
+    },
+    {
+      "id": "runtimechart_cpu0",
+      "kind": "runtime-chart",
+      "name": "cpu_chart",
+      "parentId": null,
+      "x": 24, "y": 68, "width": 440, "height": 240, "padding": 0,
+      "props": {
+        "chartType": "line",
+        "title": "CPU usage",
+        "xAxisLabel": "iteration",
+        "yAxisLabel": "%",
+        "showLegend": true,
+        "showGrid": true,
+        "maxDataPoints": 100
+      }
+    },
+    {
+      "id": "runtimechart_thr0",
+      "kind": "runtime-chart",
+      "name": "throughput_chart",
+      "parentId": null,
+      "x": 24, "y": 320, "width": 440, "height": 240, "padding": 0,
+      "props": {
+        "chartType": "line",
+        "title": "Throughput",
+        "xAxisLabel": "iteration",
+        "yAxisLabel": "items/s",
+        "showLegend": false,
+        "showGrid": true,
+        "maxDataPoints": 100
+      }
+    }
+  ]
+}
