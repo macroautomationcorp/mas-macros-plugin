@@ -83,6 +83,39 @@ mas.ui.append_table_row("results", {"Name": "Items", "Value": "23", "Status": "O
 mas.ui.clear_table("results")
 ```
 
+#### Button cells
+
+A cell can hold a clickable button instead of plain text. Build the cell with
+`mas.ui.cell_button(...)`; the `id` is what flows back as `widget_id` when the
+user clicks, so the same `on_click` / `wait_for_event` channel used for
+standalone `runtime-button` widgets handles it.
+
+```python
+mas.ui.append_table_row("orders", {
+    "Name": "Gold",
+    "Value": "1,250",
+    "Action": mas.ui.cell_button(
+        id="refund_gold",
+        label="Refund",
+        variant="destructive",  # default | outline | destructive
+    ),
+})
+
+mas.ui.on_click("refund_gold", lambda: refund("gold"))
+mas.ui.start_listener()
+```
+
+Toggle a cell button's enabled state in place (e.g. to grey out a row after
+its action fires):
+
+```python
+mas.ui.set_cell_button_enabled("orders", "refund_gold", enabled=False)
+```
+
+The lookup is by `id`; the call is a no-op if no cell with that id exists in
+the table's last-pushed rows, and idempotent (no RPC fired) if the disabled
+state already matches.
+
 ## Interactive widgets
 
 ### `runtime-button` — wait for event (blocking)
@@ -144,6 +177,6 @@ with mas.ui.batch():
 | `runtime-progress` | `set_progress(name, value)` | — |
 | `runtime-chart` | `add_data_point(name, value=, label=, series=)` | `set_chart_data(name, list)`, `clear_chart(name)` |
 | `runtime-textarea` | `append_text(name, line)` | `set_textarea(name, text)`, `clear_text(name)` |
-| `runtime-table` | `append_table_row(name, dict)` | `set_table_data(name, list)`, `clear_table(name)` |
+| `runtime-table` | `append_table_row(name, dict)` | `set_table_data(name, list)`, `clear_table(name)`, `cell_button(id=, label=, variant=, disabled=)`, `set_cell_button_enabled(table, id, enabled)` |
 | `runtime-button` | `on_click(name, fn)` + `start_listener()` | `wait_for_event(timeout=)` |
 | `runtime-input` | `on_change(name, fn)` + `start_listener()` | `get_input_value(name)` |

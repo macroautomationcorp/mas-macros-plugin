@@ -148,6 +148,18 @@ Each row passed from Python must be a dict whose keys match `columns` exactly:
 mas.ui.append_table_row("results", {"Name": "Gold", "Value": "1,250", "Status": "OK"})
 ```
 
+A cell can also hold a clickable button via `mas.ui.cell_button(...)` — useful
+for per-row actions. Click events route through the same channel as standalone
+buttons, so `mas.ui.on_click("<cell_id>", fn)` handles them. See
+`mas-ui-python-api.md` for the full pattern.
+
+```python
+mas.ui.append_table_row("orders", {
+    "Name": "Gold",
+    "Action": mas.ui.cell_button(id="refund_gold", label="Refund", variant="destructive"),
+})
+```
+
 ## `runtime-button`
 
 User-clickable button. The script reads click events via

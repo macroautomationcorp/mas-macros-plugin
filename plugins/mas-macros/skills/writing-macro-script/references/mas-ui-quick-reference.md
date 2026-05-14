@@ -30,6 +30,13 @@ mas.ui.set_table_data("results", [
 ])
 mas.ui.append_table_row("results", {"Name": "XP", "Value": "45,000", "Status": "OK"})
 mas.ui.clear_table("results")
+
+# Button inside a cell — clicks come back through on_click / wait_for_event
+mas.ui.append_table_row("orders", {
+    "Name": "Gold",
+    "Action": mas.ui.cell_button(id="refund_gold", label="Refund", variant="destructive"),
+})
+mas.ui.set_cell_button_enabled("orders", "refund_gold", enabled=False)
 ```
 
 ## User interaction
@@ -73,6 +80,6 @@ Especially worth it inside hot loops where multiple widgets update each iteratio
 | `runtime-progress` | `set_progress(name, value)` | — |
 | `runtime-chart` | `add_data_point(name, value=, label=, series=)` | `set_chart_data`, `clear_chart` |
 | `runtime-textarea` | `append_text(name, line)` | `set_textarea`, `clear_text` |
-| `runtime-table` | `append_table_row(name, dict)` | `set_table_data`, `clear_table` |
+| `runtime-table` | `append_table_row(name, dict)` | `set_table_data`, `clear_table`, `cell_button(id=, label=, …)`, `set_cell_button_enabled` |
 | `runtime-button` | `on_click(name, fn)` + `start_listener()` | `wait_for_event(timeout=)` |
 | `runtime-input` | `on_change(name, fn)` + `start_listener()` | `get_input_value(name)` |
