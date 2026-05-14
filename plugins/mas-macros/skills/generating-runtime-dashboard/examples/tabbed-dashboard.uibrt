@@ -1,0 +1,98 @@
+{
+  "version": 1,
+  "projectType": "RuntimeUI",
+  "meta": {
+    "name": "Tabbed Dashboard",
+    "createdAt": "2026-05-01T00:00:00.000Z",
+    "updatedAt": "2026-05-01T00:00:00.000Z"
+  },
+  "widgets": [],
+  "tabs": [
+    {
+      "id": "tab_a1b2c3d4",
+      "name": "Live",
+      "order": 0,
+      "widgets": [
+        {
+          "id": "runtimelabel_status",
+          "kind": "runtime-label",
+          "name": "status",
+          "parentId": null,
+          "x": 24, "y": 24, "width": 400, "height": 32, "padding": 0,
+          "props": {
+            "text": "Idle",
+            "fontSize": 16,
+            "color": "",
+            "alignment": "left"
+          }
+        },
+        {
+          "id": "runtimeprogress_main",
+          "kind": "runtime-progress",
+          "name": "main_bar",
+          "parentId": null,
+          "x": 24, "y": 68, "width": 400, "height": 40, "padding": 0,
+          "props": {
+            "label": "Overall progress",
+            "min": 0,
+            "max": 100,
+            "value": 0,
+            "showPercentage": true
+          }
+        },
+        {
+          "id": "runtimetextarea_log",
+          "kind": "runtime-textarea",
+          "name": "log",
+          "parentId": null,
+          "x": 24, "y": 124, "width": 440, "height": 200, "padding": 0,
+          "props": {
+            "text": "",
+            "fontSize": 12,
+            "fontFamily": "mono",
+            "scrollable": true,
+            "maxLines": 200,
+            "showLineNumbers": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "tab_e5f6a7b8",
+      "name": "Summary",
+      "order": 1,
+      "widgets": [
+        {
+          "id": "runtimetable_totals",
+          "kind": "runtime-table",
+          "name": "totals",
+          "parentId": null,
+          "x": 24, "y": 24, "width": 440, "height": 240, "padding": 0,
+          "props": {
+            "columns": ["Metric", "Value"],
+            "scrollable": true,
+            "striped": true,
+            "compact": false,
+            "maxRows": 50
+          }
+        },
+        {
+          "id": "runtimechart_breakdown",
+          "kind": "runtime-chart",
+          "name": "breakdown",
+          "parentId": null,
+          "x": 24, "y": 280, "width": 440, "height": 240, "padding": 0,
+          "props": {
+            "chartType": "bar",
+            "title": "Items by category",
+            "xAxisLabel": "",
+            "yAxisLabel": "count",
+            "showLegend": false,
+            "showGrid": true,
+            "maxDataPoints": 50
+          }
+        }
+      ]
+    }
+  ]
+}

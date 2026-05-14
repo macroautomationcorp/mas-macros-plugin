@@ -70,3 +70,4 @@ drives it:
 - [streaming-chart.uibrt](examples/streaming-chart.uibrt) — line chart for streaming metrics
 - [log-textarea.uibrt](examples/log-textarea.uibrt) — scrolling mono text-area log
 - [data-table.uibrt](examples/data-table.uibrt) — table populated at the end of the run
+- [tabbed-dashboard.uibrt](examples/tabbed-dashboard.uibrt) — two-tab Live/Summary layout

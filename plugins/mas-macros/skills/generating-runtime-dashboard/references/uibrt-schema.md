@@ -52,12 +52,20 @@ Same envelope as `.uibproj` argument widgets:
 
 ## `widgets` vs `tabs`
 
-Most dashboards just use the flat `widgets` array. The `tabs` array is supported
-for cases where you want section tabs inside the dashboard, but it's rarely needed
-in practice — keep dashboards single-pane unless the user explicitly asks for tabs.
+A `.uibrt` is in **one of two modes**, never both:
 
-When `tabs` is present, the host app renders a tab strip and ignores the top-level
-`widgets` array. Each tab object has the same shape as in `.uibproj`:
+- **Flat mode** — the top-level `widgets` array holds every widget; `tabs` is
+  absent or empty. Right for single-pane dashboards (the common case).
+- **Tabbed mode** — `tabs` is a non-empty array; the top-level `widgets` array
+  is empty. The host renders a tab strip and only shows the active tab's
+  widgets. Reach for this when the dashboard naturally splits into sections
+  (e.g. "Live" vs "Summary", or a per-stage breakdown).
+
+When `tabs` is present, the host app **ignores the top-level `widgets` array**
+— anything you leave there is invisible at runtime. Keep flat `widgets: []` in
+tabbed files to make this explicit.
+
+Each tab object:
 
 ```json
 {
@@ -67,6 +75,28 @@ When `tabs` is present, the host app renders a tab strip and ignores the top-lev
   "widgets": [ /* runtime widgets */ ]
 }
 ```
+
+| Field | Type | Notes |
+| --- | --- | --- |
+| `id` | string | Unique. Format `tab_<8 hex chars>` matches what the editor generates. |
+| `name` | string | Shown on the tab strip. Free-form. |
+| `order` | number | Render order, left to right. Zero-indexed. |
+| `widgets` | array | Same widget envelope as flat mode. |
+
+### Editor parity notes
+
+The UIBuilder editor enforces a few invariants on tabbed runtime files.
+Hand-written `.uibrt`s should respect them so they round-trip cleanly:
+
+- **Adding the first tab to an existing flat file** migrates every widget from
+  the flat array into a new `Tab 1`, then creates an empty `Tab 2` next to it.
+  If you're generating a tabbed file from scratch, just emit two tabs directly.
+- **Deleting back down to one tab** collapses to flat mode — the remaining
+  tab's widgets are hoisted into the top-level `widgets` array and `tabs` is
+  removed. So a "tabbed file with exactly one tab" never persists from the
+  editor; treat it as a transient state if you ever observe it.
+- Widget `name` fields are still globally unique across all tabs (Python
+  addresses widgets by name, not by tab).
 
 ## Minimal valid file
 
